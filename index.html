@@ -104,7 +104,7 @@ min-height: :100px;
 						<input type="text" name="" class="form-control mt-3 mb-2" id="P2" placeholder="kindly input a price" onchange="multiplyb();">
 						</form>
 					</div>
-					<div class="col-3 mt-2" id="total2"></div>
+					<div class="col-3 mt-3" id="total2"></div>
 					</div>
 					  </div>
 				<!-- content 4 -->
@@ -129,7 +129,7 @@ min-height: :100px;
 						<input type="text" name="" class="form-control mt-4" id="P3" placeholder="kindly input a price" onchange="multiplyc();">
 						</form>
 					</div>
-					<div class="col-3 mt-2" id="total3"></div>
+					<div class="col-3 mt-4" id="total3"></div>
 					</div>
 						</div>
 				
@@ -205,10 +205,13 @@ min-height: :100px;
 
 				var display5 = ('Thank you for shopping with us , you are purchasing a total of ' + list + ' items, the total amount being spent is ' + sumall + ' naira and average of ' + average + '      .shop more to qualify for our valentines day promo.') ;
 
-
-				 if(isNaN(sumg) ||(sumh) || (sumi)){
+				/*updated comment
+				if(isNaN(sumg) ||(sumh) || (sumi)){
 				 	alert('Kindly input a number as your price');
-				}else if( sumd && sumg ==''){
+				}else
+				*/
+
+				if( sumd && sumg ==''){
 					alert('Kindly choose your quantity and input your price ');
 				}else if( sume && sumh ==''){
 					alert('Kindly choose your quantity and input your price ');
