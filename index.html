@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<!-- Css Bootsrrap -->
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link href ="css/index.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+div{
+min-height: :100px;
+}
+#title{
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	padding-top: 10px;
+}
+#fashiondate{
+	text-align:right;
+	font-weight: bold;
+	font-size: 13px;
+
+}
+</style>
+</head>
+<body>
+		<div class="container">
+			<!-- Head -->
+			<header class="row">
+				<div class="col" style="background-color: lightblue;">
+					<h1 id="title">WELCOME TO SKIMA FASHION STORE</h1>
+					<p style="font-weight: lighter; text-align: center;"> The store is currently running a promo for online shopper, there will be a VALENTINE'S DAY Prize draw for <strong> Customers who purchased up to goods worth #20,000 or up to 10 items in one transaction.</strong> The interface below has been designed for customers to enter the prize draw.</p>
+					<p id="fashiondate"></p>
+				</div>
+				
+			</header>
+			<!-- section 1 -->
+			<div class="row">
+				<!-- content one -->
+				<div class="col-12">
+					<div class="row" style="border-bottom: 1px solid black;" >
+					<div class="col-3">
+						<p style="text-align: center; font-weight: bold;">Item</p>
+					</div>
+					<div class="col-3">
+						<p style="text-align: center; font-weight: bold;">Quantity</p>
+					</div>
+					<div class="col-3">
+						<p style="text-align: center; font-weight: bold;">Amount</p>
+					</div>
+					<div class="col-3">
+						<p style="text-align: center; font-weight: bold;">Total</p>
+					</div>
+					</div>
+				</div>
+				<!-- content 2 -->
+					<div class="col-12">
+						<div class="row" style="border-bottom: 1px solid black;" >
+					<div class="col-3" align="center">
+						<img src="img/shoeblue.jpg" alt="shoe1" class="img-fluid mt-1" width="100" height="100">
+					</div>
+					<div class="col-3">
+						<select class="form-control mt-3" id="Q1" onchange="multiplya();">
+							<option value=''>Select Quantity</option>
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							
+						</select>
+					</div>
+					<div class="col-3">
+						<form>
+						<input type="text" name="" class="form-control mt-3" id="P1" placeholder="kindly input a price" onchange="multiplya();">
+						</form>
+					</div>
+					<div class="col-3 mt-3" id="total1">
+						
+					</div>
+					</div>
+					</div>
+				<!-- content 3 -->
+					  <div class="col-12">
+					  	<div class="row" style="border-bottom: 1px solid black;" >
+					<div class="col-3" align="center">
+						<img src="img/shoered.jpg" alt="shoe1" class="img-fluid mt-2 mb-3 ms-" width="100" height="100">
+					</div>
+					<div class="col-3">
+						<form>
+						<select class="form-control mt-3 mb-2" id="Q2" onchange="multiplyb();">
+							<option value=''>Select Quantity</option>
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+						</select>
+					</form>
+					</div>
+					<div class="col-3">
+						<form>
+						<input type="text" name="" class="form-control mt-3 mb-2" id="P2" placeholder="kindly input a price" onchange="multiplyb();">
+						</form>
+					</div>
+					<div class="col-3 mt-2" id="total2"></div>
+					</div>
+					  </div>
+				<!-- content 4 -->
+						<div class="col-12">
+							<div class="row">
+					<div class="col-3" align="center">
+						<img src="img/shoegrey.jpg" alt="shoe1" class="img-fluid mt-3" width="100" height="100">
+					</div>
+					<div class="col-3">
+						<form>
+						<select class="form-control mt-4" id="Q3" onchange="multiplyc();">
+							<option value=''>Select Quantity</option>
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+						</select>
+						</form>
+					</div>
+					<div class="col-3">
+						<form>
+						<input type="text" name="" class="form-control mt-4" id="P3" placeholder="kindly input a price" onchange="multiplyc();">
+						</form>
+					</div>
+					<div class="col-3 mt-2" id="total3"></div>
+					</div>
+						</div>
+				
+			</div>
+			<!-- section 2 -->
+
+			<div class="row">
+				<div class="col">
+					<form >
+						<button type="button" class="btn btn-primary mt-2 mb-2 form-control" onclick="check();">Enter Prize Draw</button>
+					</form>
+				</div>
+			</div>
+
+			<!-- section 3 -->
+
+			<div class="row">
+				<div class="col-12">
+					<div class="row">
+						<div class="col-2" id="result"></div>
+						<div class="col-10" id="result2"></div>
+					</div>	
+				</div>
+			</div>
+</div>
+<script type="text/javascript" language="script">
+
+		// function1
+		function multiplya(){
+				 shirtQa = document.getElementById('Q1').value;
+				 pricea = document.getElementById('P1').value;
+				 total = (shirtQa * pricea);
+				document.getElementById('total1').innerHTML=total;
+		}
+
+		// function2
+		function multiplyb(){
+				var shirtQb = document.getElementById('Q2').value;
+				console.log(shirtQb);
+				var priceb = document.getElementById('P2').value;
+				total2 = (shirtQb * priceb);
+				document.getElementById('total2').innerHTML=total2;
+		}
+
+		// function3
+		function multiplyc(){
+				var shirtQc = document.getElementById('Q3').value;
+				var pricec = document.getElementById('P3').value;
+				 total3 = (shirtQc * pricec);
+				document.getElementById('total3').innerHTML=total3;
+		}
+
+		// function 4
+			function check(){
+				var suma = document.getElementById('total1').innerHTML;
+				var sumb = document.getElementById('total2').innerHTML;
+				var sumc = document.getElementById('total3').innerHTML;
+				var sumd = document.getElementById('Q1').value;
+				var sume = document.getElementById('Q2').value;
+				var sumf = document.getElementById('Q3').value;
+				var sumg = document.getElementById('P1').value;
+				var sumh = document.getElementById('P2').value;
+				var sumi = document.getElementById('P3').value;
+				var list = Number(sumd) + Number(sume) + Number(sumf);
+				var sumall = Number(suma)+ Number (sumb)+ Number (sumc);
+				var average = sumall / list ;
+
+				var display1 = "<img src ='img/congrats.jpeg' alt='congratulation' class='img-fluid' width='100'>";
+
+				var display2 =('Congrats, you are qualified for our Valentines promo, You re purchasing ' + list + ' items,the total amount being spent is ' + sumall + ' and on average of ' + average +  ' naira');
+
+				var display4 = "<img src ='img/tryagain.jpg' alt='tryagain' class='img-fluid' width='100'>";
+
+				var display5 = ('Thank you for shopping with us , you are purchasing a total of ' + list + ' items, the total amount being spent is ' + sumall + ' naira and average of ' + average + '      .shop more to qualify for our valentines day promo.') ;
+
+
+				 if(isNaN(sumg) ||(sumh) || (sumi)){
+				 	alert('Kindly input a number as your price');
+				}else if( sumd && sumg ==''){
+					alert('Kindly choose your quantity and input your price ');
+				}else if( sume && sumh ==''){
+					alert('Kindly choose your quantity and input your price ');
+				}else if ( sumf && sumi == ''){
+					alert('Kindly choose your quantity and input your price');
+				}else if ( sumg == '' && sumh == '' && sumi== ''){
+					alert('Kindly choose your quantity and input your price');
+				}else if (list >= 10 || (sumall >= 20000)){
+					document.getElementById('result').innerHTML=display1;
+					document.getElementById('result2').innerHTML=display2;
+				}else{
+					document.getElementById('result').innerHTML=display4;
+					document.getElementById('result2').innerHTML=display5;
+				}
+				
+			}
+				//function date
+		var date = new Date ();
+		document.getElementById('fashiondate').innerHTML=date;
+</script>
+</body>
+</html>
